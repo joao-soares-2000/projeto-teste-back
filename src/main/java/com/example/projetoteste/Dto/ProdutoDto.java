@@ -1,16 +1,15 @@
-package com.example.projetoteste.Domain;
+package com.example.projetoteste.Dto;
 
-import javax.persistence.*;
+import com.example.projetoteste.Domain.Produto;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.Objects;
 
-@Entity
-@Table(name = "produtos")
-public class Produto implements Serializable {
+public class ProdutoDto implements Serializable {
     private static final long SerialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String descricao;
@@ -19,16 +18,16 @@ public class Produto implements Serializable {
 
     private String ncm;
 
-    public Produto() {
+    public ProdutoDto() {
         super();
     }
 
-    public Produto(Integer id, String descricao, String unMedida, String ncm) {
+    public ProdutoDto(Produto obj) {
         super();
-        this.id = id;
-        this.descricao = descricao;
-        this.unMedida = unMedida;
-        this.ncm = ncm;
+        this.id = obj.getId();
+        this.descricao = obj.getDescricao();
+        this.unMedida = obj.getUnMedida();
+        this.ncm = obj.getNcm();
     }
 
     public Integer getId() {
@@ -61,18 +60,5 @@ public class Produto implements Serializable {
 
     public void setNcm(String ncm) {
         this.ncm = ncm;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Produto)) return false;
-        Produto produto = (Produto) o;
-        return Objects.equals(getId(), produto.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
     }
 }
