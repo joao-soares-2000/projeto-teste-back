@@ -17,5 +17,8 @@ public class ProdutoService {
         return repository.findAll();
     }
 
-
+    public Produto create(Produto obj) {
+        obj.setId(null);
+        return repository.save(obj);
+    }
 }

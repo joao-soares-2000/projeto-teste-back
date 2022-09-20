@@ -14,7 +14,7 @@ public class ProdutoDto implements Serializable {
 
     private String descricao;
 
-    private String unMedida;
+    private String unmedida;
 
     private String ncm;
 
@@ -26,7 +26,7 @@ public class ProdutoDto implements Serializable {
         super();
         this.id = obj.getId();
         this.descricao = obj.getDescricao();
-        this.unMedida = obj.getUnMedida();
+        this.unmedida = obj.getUnmedida();
         this.ncm = obj.getNcm();
     }
 
@@ -46,12 +46,12 @@ public class ProdutoDto implements Serializable {
         this.descricao = descricao;
     }
 
-    public String getUnMedida() {
-        return unMedida;
+    public String getUnmedida() {
+        return unmedida;
     }
 
-    public void setUnMedida(String unMedida) {
-        this.unMedida = unMedida;
+    public void setUnmedida(String unmedida) {
+        this.unmedida = unmedida;
     }
 
     public String getNcm() {

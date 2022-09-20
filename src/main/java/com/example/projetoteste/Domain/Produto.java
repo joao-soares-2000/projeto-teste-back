@@ -15,7 +15,7 @@ public class Produto implements Serializable {
 
     private String descricao;
 
-    private String unMedida;
+    private String unmedida;
 
     private String ncm;
 
@@ -23,11 +23,11 @@ public class Produto implements Serializable {
         super();
     }
 
-    public Produto(Integer id, String descricao, String unMedida, String ncm) {
+    public Produto(Integer id, String descricao, String unmedida, String ncm) {
         super();
         this.id = id;
         this.descricao = descricao;
-        this.unMedida = unMedida;
+        this.unmedida = unmedida;
         this.ncm = ncm;
     }
 
@@ -47,12 +47,12 @@ public class Produto implements Serializable {
         this.descricao = descricao;
     }
 
-    public String getUnMedida() {
-        return unMedida;
+    public String getUnmedida() {
+        return unmedida;
     }
 
-    public void setUnMedida(String unMedida) {
-        this.unMedida = unMedida;
+    public void setUnMedida(String unmedida) {
+        this.unmedida = unmedida;
     }
 
     public String getNcm() {
