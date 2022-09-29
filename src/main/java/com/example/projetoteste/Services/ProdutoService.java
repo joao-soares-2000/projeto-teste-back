@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 @Service
 public class ProdutoService {
@@ -17,8 +18,8 @@ public class ProdutoService {
         return repository.findAll();
     }
 
-    public Produto create(Produto obj) {
-        obj.setId(null);
-        return repository.save(obj);
+    public Produto create(Produto produto) {
+        produto.setId(null);
+        return repository.save(produto);
     }
 }

@@ -1,22 +1,31 @@
 package com.example.projetoteste.Domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "produtos")
+@SequenceGenerator(name = "seqProdutos",sequenceName = "SEQ_PRODUTOS",allocationSize = 1)
 public class Produto implements Serializable {
     private static final long SerialVersionUID = 1L;
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqProdutos")
+    @Column(nullable = false)
     private Integer id;
 
+    @Column
+    @NotEmpty(message = "campo descrição vazio")
     private String descricao;
 
+    @Column
+    @NotEmpty(message = "campo unidade de medida vazio")
     private String unmedida;
 
+    @Column
+    @NotEmpty(message = "campo ncm vazio")
     private String ncm;
 
     public Produto() {
@@ -24,7 +33,6 @@ public class Produto implements Serializable {
     }
 
     public Produto(Integer id, String descricao, String unmedida, String ncm) {
-        super();
         this.id = id;
         this.descricao = descricao;
         this.unmedida = unmedida;
@@ -51,7 +59,7 @@ public class Produto implements Serializable {
         return unmedida;
     }
 
-    public void setUnMedida(String unmedida) {
+    public void setUnmedida(String unmedida) {
         this.unmedida = unmedida;
     }
 

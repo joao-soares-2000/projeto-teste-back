@@ -10,7 +10,7 @@ import java.io.Serializable;
 public class ProdutoDto implements Serializable {
     private static final long SerialVersionUID = 1L;
 
-    private Integer id;
+    private Serializable id;
 
     private String descricao;
 
@@ -30,11 +30,11 @@ public class ProdutoDto implements Serializable {
         this.ncm = obj.getNcm();
     }
 
-    public Integer getId() {
+    public Serializable getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Serializable id) {
         this.id = id;
     }
 
