@@ -2,9 +2,6 @@ package com.example.projetoteste.Dto;
 
 import com.example.projetoteste.Domain.Produto;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.io.Serializable;
 
 public class ProdutoDto implements Serializable {
