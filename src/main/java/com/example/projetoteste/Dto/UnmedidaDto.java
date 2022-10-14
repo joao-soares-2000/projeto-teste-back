@@ -4,7 +4,7 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotEmpty;
 
-public class UnMedidaDto {
+public class UnmedidaDto {
     private static final long SerialversionUID = 1L;
     private Integer id;
 
@@ -12,11 +12,11 @@ public class UnMedidaDto {
     @Length(min = 2, max = 7, message = "a unidade de medida dever ter de 2 a 7 caracteres")
     private String unmedida;
 
-    public UnMedidaDto() {
+    public UnmedidaDto() {
         super();
     }
 
-    public UnMedidaDto(Integer id, String unmedida) {
+    public UnmedidaDto(Integer id, String unmedida) {
         this.id = id;
         this.unmedida = unmedida;
     }

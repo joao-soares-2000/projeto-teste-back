@@ -2,14 +2,14 @@ package com.example.projetoteste.Domain;
 
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class ncm implements Serializable {
+@Entity
+@Table(name = "ncm")
+public class Ncm implements Serializable {
     private static final long SerialVersionUID;
 
     static {
@@ -24,11 +24,11 @@ public class ncm implements Serializable {
     @Length(min = 8, max = 8, message = "O ncm deve ter 8 digitos")
     private String ncm;
 
-    public ncm() {
+    public Ncm() {
         super();
     }
 
-    public ncm(Integer id, String ncm) {
+    public Ncm(Integer id, String ncm) {
         this.id = id;
         this.ncm = ncm;
     }
@@ -52,8 +52,8 @@ public class ncm implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ncm)) return false;
-        ncm ncm1 = (ncm) o;
+        if (!(o instanceof Ncm)) return false;
+        Ncm ncm1 = (Ncm) o;
         return Objects.equals(getId(), ncm1.getId()) && Objects.equals(getNcm(), ncm1.getNcm());
     }
 
